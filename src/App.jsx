@@ -50,12 +50,13 @@ function renderGrid(root, data) {
   Plotly.newPlot(root, [grid], layout);
 }
 
-
 function Example() {
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
     queryFn: () =>
-      fetch("https://api.github.com/repos/mdn/content/stats/commit_activity",).then((res) => res.json()),
+      fetch(
+        "https://api.github.com/repos/mdn/content/stats/commit_activity",
+      ).then((res) => res.json()),
   });
 
   if (isPending) return "Loading...";
